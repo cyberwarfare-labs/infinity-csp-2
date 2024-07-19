@@ -1,0 +1,173 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+    
+}
+
+
+.navbar {
+    background-color:	#2f2626;
+    width: 100%;        
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.leftmenu .icon {
+    width: 350px;
+    height: 6vh; 
+    margin-right: 10px; 
+}
+
+.rightmenu {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 60px;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+
+.footer {
+    background-color: #2f2626;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+span {
+    color: #fff;
+}
+
+.container-first {
+    flex: 1;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+} 
+
+
+.container-first img {
+    min-width: 100%;
+    
+}
+
+
+.card {
+    
+    /* height: 80%; */
+    width: 100%;
+    background: rgb(55, 43, 226);
+    
+    
+}
+
+
+
+
+.container h1{
+    text-align: center;
+    margin-top: 0px;
+    color: whitesmoke;
+    padding-top: 30px;
+    
+}
+
+
+.form-group {
+   /* align-items: center; */
+   text-align: center;
+}
+
+
+.form-group label {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    margin-left: 370px;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+    
+}
+
+
+.form-group input, 
+.form-group select {
+    
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* margin-bottom: 15px; */
+    /* margin-left: 300px; */
+    align-items: center;
+    
+}
+
+#department{
+    width: 51%;
+}
+
+
+
+.form-group input[type="submit"] {
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.form-group input[type="submit"]:hover {
+    background: #555;
+} 
+
+
+.form-group button{
+    align-items: center;
+    margin-top: auto;
+}
+
+.card button {
+    padding: 10px 20px;
+    background-color: #2f2626;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 15%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

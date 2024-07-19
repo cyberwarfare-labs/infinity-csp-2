@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <title>Employee Management Portal</title>
+    <script>
+		window.onload = function () {
+			document.getElementById('siteForm').onsubmit = function (event) {
+				event.preventDefault();
+
+				// Create a new FormData object and append form data
+				var formData = new FormData(this);
+
+				// Send form data to process_form.php using fetch API
+				fetch('process.php', {
+					method: 'POST',
+					body: formData
+				})
+					.then(response => response.text())
+					.then(data => {
+						// Display thank you message with organization name
+						var thankYouMessage = document.getElementById('thankYouMessage');
+						thankYouMessage.innerHTML = "<h2>Thank you for your submission " + data + "!</h2>";
+
+						window.location.hash = '#thankYouMessage';
+					})
+					.catch(error => console.error('Error:', error));
+			};
+		};
+		
+
+	</script>
+</head>
+
+<div>
+    <div class="navbar">
+        <div class="menu">
+            <div class="leftmenu">
+                <a style="text-decoration:none" href="index.html"><img src="icon.png" alt="Icon" class="icon"></a>
+                <a style="text-decoration:none" href="index.html"></a>
+            </div>
+            <div class="rightmenu">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-first">
+    <img src="Employee-Monitoring-Software.png" alt="CWL">
+    </div>  
+    
+    <div class="card">
+		<div class="container">
+			<h1>Add Employee Details</h1>
+			<form id="siteForm" action="#thankYouMessage">
+                <div class="form-group">
+                    <label for="name">Employee Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Name*"required>
+                </div>
+                <div class="form-group">
+                    <label for="employee_id">Employee ID:</label>
+                    <input type="text" id="employee_id" name="employee_id" placeholder="Id*" required>
+                </div>
+                <div class="form-group">
+                    <label for="department">Department:</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="HR">HR</option>
+                        <option value="Finance">Finance</option>
+                        <option value="IT">IT</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Sales">Sales</option>
+                    </select>
+                </div>
+                <div class="form-group">
+				    <label for="ip" class="content-items">Email:</label>
+				    <input type="text" id="ip" name="ip" placeholder="Email*" required>
+                </div>
+                <div class="form-group">
+                    <label for="org" class="content-items">Contact: </label>
+				    <input type="text" id="org" name="organization" placeholder="Contact*" required>
+                </div>
+				<div class="form-group">
+                    <button type="submit">Add </button>
+                </div>
+				
+			</form>
+		</div>
+		<div id="thankYouMessage" class="thank-you-message">
+		</div>
+    </div>
+
+   
+
+    <div class="footer">
+        <p>© SecureCorp - All Rights Reserved </p>
+    </div>
+</body>
+
+</html>
